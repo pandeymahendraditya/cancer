@@ -107,26 +107,39 @@
     margin: 0 0 1.8rem;
   }
 
-  .deck-view {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  .deck-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     border-top: 1px solid var(--line);
-    padding-top: 1.5rem;
   }
 
-  .deck-frame {
-    width: 100%;
-    height: 80vh;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    background: var(--line);
+  .deck-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--line);
   }
 
-  @media (max-width: 480px) {
-    .deck-frame {
-      height: 60vh;
-    }
+  .deck-list .deck-label {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    width: 3.2rem;
+    flex-shrink: 0;
+  }
+
+  .deck-list a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .deck-list a:hover,
+  .deck-list a:focus-visible {
+    border-bottom-color: var(--accent-deep);
+    color: var(--accent-deep);
   }
 </style>
 
@@ -159,12 +172,12 @@
       series, please contact me.
     </p>
 
-    <div class="deck-view">
-      <iframe class="deck-frame" src="slides/cancerweek2day1.pdf" title="Slides"></iframe>
-      <iframe class="deck-frame" src="slides/biomarkersday2.pdf" title="Slides"></iframe>
-      <iframe class="deck-frame" src="slides/biomarkersday3.pdf" title="Slides"></iframe>
-      <iframe class="deck-frame" src="slides/biomarkersday4.pdf" title="Slides"></iframe>
-      <iframe class="deck-frame" src="slides/biomarkersday7.pdf" title="Slides"></iframe>
-    </div>
+    <ul class="deck-list">
+      <li><span class="deck-label">Day 01</span><a href="slides/cancerweek2day1.pdf" target="_blank" rel="noopener">Cancer Week II</a></li>
+      <li><span class="deck-label">Day 02</span><a href="slides/biomarkersday2.pdf" target="_blank" rel="noopener">Biomarkers</a></li>
+      <li><span class="deck-label">Day 03</span><a href="slides/biomarkersday3.pdf" target="_blank" rel="noopener">Biomarkers</a></li>
+      <li><span class="deck-label">Day 04</span><a href="slides/biomarkersday4.pdf" target="_blank" rel="noopener">Biomarkers</a></li>
+      <li><span class="deck-label">Day 07</span><a href="slides/biomarkersday7.pdf" target="_blank" rel="noopener">Biomarkers</a></li>
+    </ul>
   </section>
 </div>
